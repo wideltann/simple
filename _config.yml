@@ -1,0 +1,33 @@
+title: TITLE
+name: NAME
+remote_theme: USERNAME/REPO
+# google_analytics: ANALYTICS_ID
+color-scheme: red
+
+collections:
+  poems:
+    output: true
+  posts:
+    output: true
+  drafts:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: poems
+    values:
+      layout: poem
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: page
+
+include:
+  - _pages

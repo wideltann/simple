@@ -1,0 +1,15 @@
+---
+title: posts
+---
+{% assign list = site.posts | group_by_exp:"item", "item.date | date: '%Y'" %}
+{% for year in list %}
+  <h1>{{ year.name }}</h1>
+    <ul>
+      {% for item in year.items %}
+        <li>
+          <span> {{ item.date | date: "%b %-d"}}: </span>
+          <a href="{{ item.url }}">{{ item.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+{% endfor %}

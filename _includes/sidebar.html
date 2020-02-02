@@ -1,0 +1,15 @@
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<aside class="sidebar" id="sidebar">
+  <nav class="sidebar-nav">
+    {% for item in site.pages %}
+      {% if item.name == "index.html" %}
+        <a class="sidebar-nav-item{% if page.url == item.url %} active{% endif %}" href="{{ site.baseurl }}{{ item.url }}">all</a>
+      {% endif %}
+      
+      {% if item.title != null and item.name != "404.md" and item.name != "index.html" %}
+          <a class="sidebar-nav-item{% if page.url == item.url %} active{% endif %}" href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
+      {% endif %}
+    {% endfor %}
+  </nav>
+</aside>
